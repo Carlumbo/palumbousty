@@ -25,6 +25,12 @@ function Home() {
                 rating={5}
                 image="https://boutsy.com/var/images/product/262.280/uc_7_2.jpeg"
                 />
+                
+                <Product id="SKU:12154" 
+                title="Clove Bud"
+                price={9.00}
+                rating={4}
+                image='https://boutsy.com/var/images/product/262.280/Organic_Clove_Bud_Essential_Oil_-_Main_Image__52548.1569346821.jpg' />
                 <Product id="SKU:12154" 
                 title="Clove Bud"
                 price={9.00}
