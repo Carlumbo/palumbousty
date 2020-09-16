@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom' 
 import Header from './components/Header'
 import Home from './components/Home'
-import TodoList from './TododList/TodoList'
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         {/* this is the default route */}
         <Route path="/">
           <Header />
-          <TodoList /> 
           <Home />
         </Route>
       </Switch>

@@ -1,5 +1,5 @@
 .product {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     max-height: 400px;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 
-.product__info {
+.product__info { 
     height: 100px;
     margin-bottom: 10px
 }
@@ -39,3 +39,7 @@
     border-color: #11AB11 #115611 black  ; 
 
 }
+
+.product__list {
+    display: flex;
+    }

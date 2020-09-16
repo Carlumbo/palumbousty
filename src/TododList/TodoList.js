@@ -22,8 +22,8 @@ class TodoList extends Component {
     getTasks() {
         fetch(api_url)
         .then(response => response.json())
-        .then(ressponse_items => { this.setState({
-            items: ressponse_items
+        .then(response_items => { this.setState({
+            items: response_items
         }) 
         });
     }

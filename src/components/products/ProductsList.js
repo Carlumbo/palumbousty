@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-//import ProductForm from './ProductForm'\
-import '../Products.css'
+//import ProductForm from './ProductForm'
+
 const api_url =  'http://localhost:3001/api/v1/products'
 
 
-class Products extends Component {
+class ProductList extends Component {
    constructor(props) {
        super(props)
        this.state = {
@@ -15,11 +15,11 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        this.getProducts();
+        this.getTasks();
 
     }
 
-    getProducts() {
+    getTasks() {
         fetch(api_url)
         .then(response => response.json())
         .then(response_products => { this.setState({
@@ -27,15 +27,16 @@ class Products extends Component {
         }) 
         });
     }
-    render() { 
-    
+    render() {
         return (
-            <div className="product__list">
+            <div>
+               
+                <ul id="product_list">
                     {this.state.products.map((product) => (
                         <div className="product">
                         <div className="product__info">
                         <p>{product.title}</p>
-                        <p><small>SKU:{product.id}</small></p>
+                        <p><small>{product.id}</small></p>
                         <div className="product__rating">
                             { Array(product.rating).fill().map((_) => (
                                   <p><span role="img" aria-label="Star rating">⭐</span></p>
@@ -52,48 +53,11 @@ class Products extends Component {
                     </div>
                         
                     ))}
+                </ul>
             </div>
-            
         )
     }
 }
 
  
-
-
-export default Products;
-
-
-/* import React from 'react';
-import '../Products.css';
-//import ProductList from './products/ProductsList';
-
-
-
-
-
-function Products({id, title ,image, price, rating}) {
-    return (
-        <div className="product">
-            <div className="product__info">
-            <p>{title}</p>
-            <p><small>{id}</small></p>
-            <div className="product__rating">
-                { Array(rating).fill().map((_) => (
-                      <p><span role="img" aria-label="Star rating">⭐</span></p>
-                   ))
-                }
-            </div>
-            </div>
-            <img src={image} alt="" /> 
-            <p className="product__price">
-                <small>$</small>
-            <strong>{price}</strong>
-                </p>
-            <button>Add to cart</button>
-        </div>
-    )
-}
-
-export default Products
-*/
+export default ProductList;

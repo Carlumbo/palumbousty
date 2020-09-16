@@ -27,16 +27,17 @@
     height: 12px;
     padding: 7px;
     border: none;
-    width: 100%
+    width: 100%;
+    border-radius: 2em 0em 0 2em; 
 
 }
 .header__searchIcon {
+    background-color: #00EE00;
     margin-left: 1px;
     margin-top: 12px;
-    background-color: #00EE00;
     padding: 1px;
     outline: 1px black; 
- 
+    border-radius: 0 2em 2em 0 ; 
 
 }
 
