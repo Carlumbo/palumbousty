@@ -1,81 +1,73 @@
-
 .header {
-    background: Black;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background: Black;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__logo {
-    width: 200px;
-    object-fit: contain;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 8px
+  width: 200px;
+  object-fit: contain;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 8px;
 }
 
 .header__search {
-    display: flex;
-    flex: 1;
-
+  display: flex;
+  flex: 1;
 }
 
 .header__searchInput {
-    margin-top: 12px;
-    height: 12px;
-    padding: 7px;
-    border: none;
-    width: 100%;
-    border-radius: 2em 0em 0 2em; 
-
+  margin-top: 12px;
+  height: 12px;
+  padding: 7px;
+  border: none;
+  width: 100%;
+  border-radius: 2em 0em 0 2em;
 }
 .header__searchIcon {
-    background-color: #00EE00;
-    margin-left: 1px;
-    margin-top: 12px;
-    padding: 1px;
-    outline: 1px black; 
-    border-radius: 0 2em 2em 0 ; 
-
+  background-color: #00ee00;
+  margin-left: 1px;
+  margin-top: 12px;
+  padding: 1px;
+  outline: 1px black;
+  border-radius: 0 2em 2em 0;
 }
 
 .header__nav {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .header__link {
-    color: white; 
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .header__option {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
-    
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
 
 .header__optionLineOne {
-    font-size: 10px; 
+  font-size: 10px;
 }
 .header__optionLineTwo {
-    font-size: 13px;
-    font-weight: 800;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .header__optionBasket {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .header_basketCount {
-    
-    margin-left: 10px;
-    margin-right: 10px
+  margin-left: 10px;
+  margin-right: 10px;
 }
