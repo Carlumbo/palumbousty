@@ -1,6 +1,7 @@
 import React from "react";
 import backimage from "../boutsyBack.jpg";
 import "../Home.css";
+
 //import uuid from 'uuid'
 //import LavOil from './products/images/Lavender.jpg'
 import Products from "./Products";

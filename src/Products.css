@@ -32,7 +32,13 @@
 .product__price {
   margin-top: 5px;
 }
-.product > button {
+.delete__button {
+  background-color: #cf6c6c;
+  border: 1px solid;
+  border-color: #11ab11 #115611 black;
+}
+
+.add__button {
   background-color: #a4cea4;
   border: 1px solid;
   border-color: #11ab11 #115611 black;

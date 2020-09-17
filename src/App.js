@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Registration from "./components/auth/Registration";
+//import NavigationBar from "./components/NavigationBar";
+//import ProductCreation from "./components/ProductCreation";
 
 function App() {
   return (

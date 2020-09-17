@@ -25,6 +25,7 @@ class ProductList extends Component {
         });
       });
   }
+
   render() {
     return (
       <div>
@@ -54,6 +55,7 @@ class ProductList extends Component {
                 <strong>{product.price}</strong>
               </p>
               <button>Add to cart</button>
+              <button>Delete Product</button>
             </div>
           ))}
         </ul>

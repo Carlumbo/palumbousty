@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 //import ProductForm from './ProductForm'\
 import "../Products.css";
+
+/* 
 const api_url = "http://localhost:3001/api/v1/products";
 
 class Products extends Component {
@@ -52,7 +54,8 @@ class Products extends Component {
               <small>$</small>
               <strong>{product.price}</strong>
             </p>
-            <button>Add to cart</button>
+            <button className="add__button">Add to cart</button>
+            <button className="delete__button">Delete</button>
           </div>
         ))}
       </div>
@@ -95,3 +98,19 @@ function Products({id, title ,image, price, rating}) {
 
 export default Products
 */
+
+class Products extends Component {
+  listProducts = () => {
+    {
+      console.log(this.props);
+    } //.catPics.map(cat => <img key={cat.id} src={cat.url} alt={cat.id} />)
+    return <div>{this.props}</div>;
+  };
+
+  render() {
+    console.log(this.props);
+    return <div>Hello</div>;
+  }
+}
+
+export default Products;
