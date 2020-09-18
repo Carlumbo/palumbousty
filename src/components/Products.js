@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-//import ProductForm from './ProductForm'\
-import "../Products.css";
 
-/* 
+//import { deleteProduct } from "../actions/productActions";
+
 const api_url = "http://localhost:3001/api/v1/products";
 
 class Products extends Component {
@@ -27,6 +26,7 @@ class Products extends Component {
         });
       });
   }
+
   render() {
     return (
       <div className="product__list">
@@ -55,61 +55,10 @@ class Products extends Component {
               <strong>{product.price}</strong>
             </p>
             <button className="add__button">Add to cart</button>
-            <button className="delete__button">Delete</button>
           </div>
         ))}
       </div>
     );
-  }
-}
-
-export default Products;
-
-/* import React from 'react';
-import '../Products.css';
-//import ProductList from './products/ProductsList';
-
-
-
-
-
-function Products({id, title ,image, price, rating}) {
-    return (
-        <div className="product">
-            <div className="product__info">
-            <p>{title}</p>
-            <p><small>{id}</small></p>
-            <div className="product__rating">
-                { Array(rating).fill().map((_) => (
-                      <p><span role="img" aria-label="Star rating">⭐</span></p>
-                   ))
-                }
-            </div>
-            </div>
-            <img src={image} alt="" /> 
-            <p className="product__price">
-                <small>$</small>
-            <strong>{price}</strong>
-                </p>
-            <button>Add to cart</button>
-        </div>
-    )
-}
-
-export default Products
-*/
-
-class Products extends Component {
-  listProducts = () => {
-    {
-      console.log(this.props);
-    } //.catPics.map(cat => <img key={cat.id} src={cat.url} alt={cat.id} />)
-    return <div>{this.props}</div>;
-  };
-
-  render() {
-    console.log(this.props);
-    return <div>Hello</div>;
   }
 }
 

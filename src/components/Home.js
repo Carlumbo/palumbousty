@@ -1,10 +1,10 @@
 import React from "react";
 import backimage from "../boutsyBack.jpg";
 import "../Home.css";
-
+import ProductList from "../container/ProductList";
 //import uuid from 'uuid'
 //import LavOil from './products/images/Lavender.jpg'
-import Products from "./Products";
+//import Products from "./Products";
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
 
       {/* Product, id, title, price, rating, image*/}
       <div className="home__row">
-        <Products />
+        <ProductList />
       </div>
       {/* Product */}
     </div>

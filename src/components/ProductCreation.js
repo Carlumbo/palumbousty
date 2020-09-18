@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
+//import axios from "axios";
+import { createProduct } from "../actions/productActions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-export default class ProductCreation extends Component {
+class ProductCreation extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +13,6 @@ export default class ProductCreation extends Component {
       image: "",
       price: "",
       rating: "",
-      creationErrors: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +25,20 @@ export default class ProductCreation extends Component {
     });
     console.log("formation");
   }
+
   handleSubmit(event) {
+    event.preventDefault();
+    console.log("Cp 1");
+    this.props.createProduct(this.state);
+    console.log("Cp 2");
+    this.setState({
+      title: "",
+      image: "",
+      price: "",
+      rating: "",
+    });
+  }
+  /* handleSubmit(event) {
     //const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const { title, price, rating, image } = this.state;
     axios
@@ -47,6 +62,7 @@ export default class ProductCreation extends Component {
       });
     event.preventDefault();
   }
+  */
   render() {
     return (
       <div>
@@ -91,3 +107,13 @@ export default class ProductCreation extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      createProduct,
+    },
+    dispatch
+  );
+
+export default connect(null, mapDispatchToProps)(ProductCreation);

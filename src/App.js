@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Registration from "./components/auth/Registration";
+
 //import NavigationBar from "./components/NavigationBar";
-//import ProductCreation from "./components/ProductCreation";
+import ProductCreation from "./components/ProductCreation";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/buy">
             <h1>Buy Wholesale</h1>
             <Registration />
+            <ProductCreation />
           </Route>
           <Route path="/sell">
             <h1>Sell Wholesale</h1>

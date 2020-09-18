@@ -1,20 +1,24 @@
-const productsReducer = (state = { products: [], loading: false }, action) => {
+/*const defaultState = {
+  id: "",
+  title: "",
+  image: "",
+  price: "",
+  rating: "",
+};
+
+export default function productsReducer(state = defaultState, action) {
   switch (action.type) {
-    case "LOADING_PRODUCTS":
+    case "CREATE_PRODUCT":
+      return { ...state, product: action.payload };
+    case "DELETE_PRODUCT":
       return {
         ...state,
-        products: [...state.products],
-        loading: true,
-      };
-    case "ADD_PRODUCTS":
-      return {
-        ...state,
-        products: action.products,
-        loading: false,
+        defaultState: state.defaultState.filter(
+          (product) => product.id !== action.payload.id
+        ),
       };
     default:
       return state;
   }
-};
-
-export default productsReducer;
+}
+*/
