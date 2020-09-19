@@ -12,37 +12,10 @@ export const fetchProducts = () => {
         // console.log(dispatch);
 
         dispatch({ type: "ADD_PRODUCTS", products: responseJSON });
-        return true;
       });
   };
 };
 
-/*
-export const fetchProducts = () => {
-  let data = {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  };
-
-  return (dispatch) => {
-    dispatch({ type: "LOADING_REQUEST" });
-    fetch(`${api_url}/products`, data)
-      .then((res) => res.json())
-      .then((products) =>
-        dispatch({
-          type: "FETCH_PRODUCTS",
-          payload: products,
-        })
-      )
-      .catch(() =>
-        console.log("Response currently not accessible. Please retry later.")
-      );
-  };
-};
-*/
 export const createProduct = (products) => {
   let data = {
     method: "POST",

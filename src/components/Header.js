@@ -22,7 +22,7 @@ function Header() {
         {/* 1st link*/}
         <Link to="/login" className="header__link">
           <div className="header__option">
-            <span className="header__optionLineOne"> Hello</span>
+            <span className="header__optionLineOne">Hello</span>
             <span className="header__optionLineTwo">Sign In</span>
           </div>
         </Link>
@@ -41,6 +41,13 @@ function Header() {
           </div>
         </Link>
       </div>
+
+      <Link to="/products" className="header__link">
+        <div className="header__option">
+          <span className="header__optionLineOne">View</span>
+          <span className="header__optionLineTwo">Catalog</span>
+        </div>
+      </Link>
 
       <Link to="/checkout" className="header__link">
         <div className="header__optionBasket">

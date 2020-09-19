@@ -1,4 +1,4 @@
-/*const defaultState = {
+const defaultState = {
   id: "",
   title: "",
   image: "",
@@ -8,6 +8,11 @@
 
 export default function productsReducer(state = defaultState, action) {
   switch (action.type) {
+    case "LOADING_PRODUCTS":
+      return { ...state, state: state.products };
+    case "ADD_PRODUCTS":
+      //console.log(defaultState)
+      return { ...state, defaultState: action.products };
     case "CREATE_PRODUCT":
       return { ...state, product: action.payload };
     case "DELETE_PRODUCT":
@@ -21,4 +26,3 @@ export default function productsReducer(state = defaultState, action) {
       return state;
   }
 }
-*/

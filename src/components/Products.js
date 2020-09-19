@@ -1,32 +1,19 @@
 import React, { Component } from "react";
+import "../Products.css";
 
 //import { deleteProduct } from "../actions/productActions";
 
-const api_url = "http://localhost:3001/api/v1/products";
+//const api_url = "http://localhost:3001/api/v1/products";
 
 class Products extends Component {
   constructor(props) {
+    //console.log(props);
     super(props);
     this.state = {
       products: [],
     };
-    //get the products from the api
   }
-
-  componentDidMount() {
-    this.getProducts();
-  }
-
-  getProducts() {
-    fetch(api_url)
-      .then((response) => response.json())
-      .then((response_products) => {
-        this.setState({
-          products: response_products,
-        });
-      });
-  }
-
+  //debugger;
   render() {
     return (
       <div className="product__list">
@@ -55,6 +42,7 @@ class Products extends Component {
               <strong>{product.price}</strong>
             </p>
             <button className="add__button">Add to cart</button>
+            <button className="delete__button">Delet</button>
           </div>
         ))}
       </div>

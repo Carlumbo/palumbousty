@@ -2,11 +2,10 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
+import Home from "./container/Home";
 import Registration from "./components/auth/Registration";
-
-//import NavigationBar from "./components/NavigationBar";
 import ProductCreation from "./components/ProductCreation";
+import ProductList from "./container/ProductList";
 
 function App() {
   return (
@@ -23,9 +22,14 @@ function App() {
             <Registration />
             <ProductCreation />
           </Route>
-          <Route path="/sell">
+          {/*<Route path="/sell">
             <h1>Sell Wholesale</h1>
             <Registration />
+          </Route>
+*/}
+          <Route path="/products">
+            <h1>Product Catalog</h1>
+            <ProductList />
           </Route>
           <Route path="/login">
             <h1>Login Page</h1>

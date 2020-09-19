@@ -1,3 +1,4 @@
+/* 
 const fetchReducer = (state = [], action) => {
   switch (action.type) {
     case "LOADING_PRODUCTS":
@@ -5,10 +6,13 @@ const fetchReducer = (state = [], action) => {
       return { ...state, state: state.products };
     case "ADD_PRODUCTS":
       //debugger;
-      return { ...state, state: action.products };
+      var winter =  {...state, state: action.products}
+      console.log(winter)
+      return winter
     default:
       return state;
   }
 };
 
 export default fetchReducer;
+*/

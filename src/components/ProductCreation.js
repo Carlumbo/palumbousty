@@ -38,31 +38,7 @@ class ProductCreation extends Component {
       rating: "",
     });
   }
-  /* handleSubmit(event) {
-    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const { title, price, rating, image } = this.state;
-    axios
-      .post(
-        "http://localhost:3001/api/v1/products",
-        {
-          product: {
-            title: title,
-            image: image,
-            price: price,
-            rating: rating,
-          },
-        },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        console.log("reg  res", response);
-      })
-      .catch((error) => {
-        console.log("reg error", error);
-      });
-    event.preventDefault();
-  }
-  */
+
   render() {
     return (
       <div>

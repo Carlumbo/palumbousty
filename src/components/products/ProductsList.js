@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 //import ProductForm from './ProductForm'
 
 const api_url = "http://localhost:3001/api/v1/products";
@@ -65,3 +65,4 @@ class ProductList extends Component {
 }
 
 export default ProductList;
+*/
