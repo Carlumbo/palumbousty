@@ -40,6 +40,7 @@ export const createProduct = (products) => {
 };
 
 export const deleteProduct = (id) => {
+  // debugger;
   let data = {
     method: "DELETE",
     headers: {
@@ -49,6 +50,7 @@ export const deleteProduct = (id) => {
   };
 
   return (dispatch) => {
+    //console.log("cp1");
     fetch(`${api_url}/products/${id}`, data)
       .then((res) => res.json())
       .then((product) =>

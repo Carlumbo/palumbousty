@@ -28,9 +28,9 @@ class ProductCreation extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("Cp 1");
+
     this.props.createProduct(this.state);
-    console.log("Cp 2");
+    //console.log("Cp 2");
     this.setState({
       title: "",
       image: "",
@@ -43,7 +43,7 @@ class ProductCreation extends Component {
     return (
       <div>
         <label>Create Product</label>
-        <form onSubmit={this.handleSubmit}>
+        <form className="product__form" onSubmit={this.handleSubmit}>
           <label>Product Name:</label>
           <input
             type="text"
@@ -77,7 +77,9 @@ class ProductCreation extends Component {
             onChange={this.handleChange}
             required
           />
-          <button type="submit">Create Product</button>
+          <button className="submit__button" type="submit">
+            Create Product
+          </button>
         </form>
       </div>
     );

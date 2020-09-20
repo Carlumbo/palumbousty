@@ -3,8 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./container/Home";
+
 import Registration from "./components/auth/Registration";
-import ProductCreation from "./components/ProductCreation";
 import ProductList from "./container/ProductList";
 
 function App() {
@@ -18,9 +18,8 @@ function App() {
             <h1>Checkout Page</h1>
           </Route>
           <Route path="/buy">
-            <h1>Buy Wholesale</h1>
+            <h1>Buy products</h1>
             <Registration />
-            <ProductCreation />
           </Route>
           {/*<Route path="/sell">
             <h1>Sell Wholesale</h1>
@@ -28,10 +27,12 @@ function App() {
           </Route>
 */}
           <Route path="/products">
+            <Header />
             <h1>Product Catalog</h1>
             <ProductList />
           </Route>
           <Route path="/login">
+            <Header />
             <h1>Login Page</h1>
           </Route>
           {/* this is the default route */}

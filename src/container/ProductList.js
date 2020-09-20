@@ -1,25 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProducts } from "../actions/productActions";
+import { fetchProducts, deleteProduct } from "../actions/productActions";
 import ProductCreation from "../components/ProductCreation";
 import Products from "../components/Products";
+import uuid from "uuid";
+import "../Home.css";
 
 class ProductList extends Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
   handleLoading = () => {
-    //console.log(this.props.loading);
-    if (this.props.loading) {
+    //console.log(this.props.products);
+    if (this.props.products.loading) {
+      // console.log(this.props.products.loading);
+      // console.log("hmm");
       return <div>Loading...</div>;
     } else {
+      // console.log(this.props);
+      // console.log("okay now what");
       return (
         <div>
           <ProductCreation />
-          <Products
-            products={this.props.products.defaultState}
-            //deleteProduct={this.props.deleteProduct}
-          />
+          <br />
+          <div className="home__row">
+            <Products
+              products={this.props.products.defaultState}
+              deleteProduct={this.props.deleteProduct}
+            />
+          </div>
         </div>
       );
     }
@@ -44,7 +53,7 @@ const mapDisptachToProps = (dispatch) => {
   //console.log(dispatch(fetchProducts()));
 
   return {
-    deleteProduct: (id) => dispatch({ type: "DELETE_pRODUCT", id }),
+    deleteProduct: (id) => dispatch(deleteProduct(id)),
     fetchProducts: () => dispatch(fetchProducts()),
   };
 };

@@ -1,3 +1,4 @@
+import uuid from "uuid";
 const defaultState = {
   id: "",
   title: "",
@@ -6,15 +7,18 @@ const defaultState = {
   rating: "",
 };
 
-export default function productsReducer(state = defaultState, action) {
+export default function productsReducer(
+  state = { defaultState, loading: true },
+  action
+) {
   switch (action.type) {
     case "LOADING_PRODUCTS":
-      return { ...state, state: state.products };
+      return { ...state, state: state.products, loading: true };
     case "ADD_PRODUCTS":
       //console.log(defaultState)
-      return { ...state, defaultState: action.products };
+      return { ...state, defaultState: action.products, loading: false };
     case "CREATE_PRODUCT":
-      return { ...state, product: action.payload };
+      return { defaultState: action.payload };
     case "DELETE_PRODUCT":
       return {
         ...state,
