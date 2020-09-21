@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "../Products.css";
-import { deleteProduct } from "../actions/productActions";
-import uuid from "uuid";
 
 //import { deleteProduct } from "../actions/productActions";
 

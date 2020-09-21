@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { fetchProducts, deleteProduct } from "../actions/productActions";
 import ProductCreation from "../components/ProductCreation";
 import Products from "../components/Products";
-import uuid from "uuid";
 import "../Home.css";
 
 class ProductList extends Component {
