@@ -41,32 +41,6 @@ export default class Header extends Component {
               <span className="header__optionLineTwo">Sign up</span>
             </div>
           </Link>
-
-          <Link
-            to="/"
-            onClick={this.handleLogoutClick}
-            className="header__link"
-          >
-            <div className="header__option">
-              <span className="header__optionLineOne">Click</span>
-              <span className="header__optionLineTwo">Logout</span>
-            </div>
-          </Link>
-
-          <Link to="/dashboard" className="header__link">
-            <div className="header__option">
-              <span className="header__optionLineOne">Your</span>
-              <span className="header__optionLineTwo">Dashboard</span>
-            </div>
-          </Link>
-          {/*
-        <Link to="/sell" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Sign up</span>
-            <span className="header__optionLineTwo">Sell On Boutsy</span>
-          </div>
-        </Link>
-      */}
         </div>
 
         <Link to="/products" className="header__link">

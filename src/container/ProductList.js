@@ -3,26 +3,32 @@ import { connect } from "react-redux";
 import { fetchProducts, deleteProduct } from "../actions/productActions";
 import ProductCreation from "../components/ProductCreation";
 import Products from "../components/Products";
-import "../Home.css";
+import "../Products.css";
 
 class ProductList extends Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
+
   handleLoading = () => {
     //console.log(this.props.products);
-    if (this.props.products.loading) {
+    if (this.props.loggedInStatus === "NOT_LOGGED_IN") {
+      return (
+        <div>
+          <h1>You must login to view catalog</h1>
+        </div>
+      );
+    } else if (this.props.products.loading) {
       // console.log(this.props.products.loading);
       // console.log("hmm");
       return <div>Loading...</div>;
     } else {
-      // console.log(this.props);
       // console.log("okay now what");
       return (
         <div>
           <ProductCreation />
           <br />
-          <div className="home__row">
+          <div className="product__row">
             <Products
               products={this.props.products.defaultState}
               deleteProduct={this.props.deleteProduct}
@@ -33,12 +39,7 @@ class ProductList extends Component {
     }
   };
   render() {
-    return (
-      <div className="App">
-        <h1>Products</h1>
-        {this.handleLoading()}
-      </div>
-    );
+    return <div className="App">{this.handleLoading()}</div>;
   }
 }
 

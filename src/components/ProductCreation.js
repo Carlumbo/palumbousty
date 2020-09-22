@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import axios from "axios";
 import { createProduct } from "../actions/productActions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -45,6 +44,8 @@ class ProductCreation extends Component {
         <label>Create Product</label>
         <form className="product__form" onSubmit={this.handleSubmit}>
           <label>Product Name:</label>
+
+          <br />
           <input
             type="text"
             name="title"
@@ -53,6 +54,7 @@ class ProductCreation extends Component {
             onChange={this.handleChange}
             required
           />
+          <br />
           <input
             type="number"
             name="price"
@@ -61,14 +63,18 @@ class ProductCreation extends Component {
             onChange={this.handleChange}
             required
           />
+          <br />
           <input
             type="number"
             name="rating"
             placeholder="Rating"
             value={this.state.rating}
+            max="5"
             onChange={this.handleChange}
             required
           />
+
+          <br />
           <input
             type="text"
             name="image"
@@ -77,6 +83,8 @@ class ProductCreation extends Component {
             onChange={this.handleChange}
             required
           />
+
+          <br />
           <button className="submit__button" type="submit">
             Create Product
           </button>
