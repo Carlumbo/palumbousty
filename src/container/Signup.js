@@ -10,7 +10,7 @@ class Signup extends Component {
 
   handleSuccessfulAuth(data) {
     this.props.handleLogin(data);
-    this.props.history.push("/home");
+    this.props.history.push("/");
     alert("Login Succesful");
   }
   render() {

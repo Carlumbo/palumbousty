@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./container/Header";
 import axios from "axios";
 import Home from "./container/Home";
 import SignUp from "./container/Signup";
@@ -71,7 +71,7 @@ class App extends Component {
           <Switch>
             {/* can use :blah for random routes*/}
             <Route path="/checkout">
-              <Header />
+              <Header user={this.state} handleLogout={this.handleLogout} />
               <h1>Checkout Page</h1>
             </Route>
             <Route
@@ -79,7 +79,11 @@ class App extends Component {
               path="/buy"
               render={(props) => (
                 <div>
-                  <Header {...props} handleLogout={this.handleLogout} />
+                  <Header
+                    {...props}
+                    user={this.state}
+                    handleLogout={this.handleLogout}
+                  />
                   <SignUp
                     {...props}
                     handleLogin={this.handleLogin}
@@ -89,19 +93,39 @@ class App extends Component {
               )}
             ></Route>
             <Route path="/products">
-              <Header handleLogout={this.handleLogout} user={this.state.user} />
-              <h1>Product Catalog</h1>
+              <Header
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+                loggedInStatus={this.state.loggedInStatus}
+              />
+
               <ProductList loggedInStatus={this.state.loggedInStatus} />
+              <h1>Product Catalog</h1>
             </Route>
             <Route path="/dashboard">
-              <Header handleLogout={this.handleLogout} />
+              {console.log(this.state.loggedInStatus)}
+              <Header
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+                loggedInStatus={this.state.loggedInStatus}
+              />
               <Dashboard user={this} />
             </Route>
             {/* this is the default route */}
-            <Route path="/">
-              <Header handleLogout={this.handleLogout} />
-              <Home user={this.state} />
-            </Route>
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <div>
+                  <Header
+                    {...props}
+                    user={this.state}
+                    handleLogout={this.handleLogout}
+                  />
+                  <Home user={this.state} />
+                </div>
+              )}
+            ></Route>
           </Switch>
         </div>
       </Router>

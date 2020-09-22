@@ -5,7 +5,7 @@ import "../Home.css";
 //import Header from "../components/Header";
 //import uuid from 'uuid'
 function Home(props) {
-  console.log(props.user.user.email);
+  //console.log(props.user.user.email);
 
   if (props.user.loggedInStatus === "LOGGED_IN") {
     return (

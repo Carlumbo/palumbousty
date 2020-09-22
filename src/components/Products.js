@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import "../Products.css";
 
-//import { deleteProduct } from "../actions/productActions";
-
-//const api_url = "http://localhost:3001/api/v1/products";
-
 class Products extends Component {
-  //debugger;
-
   productList = () => {
     return this.props.products.map((product) => (
       <div className="product">
@@ -20,19 +14,19 @@ class Products extends Component {
         >
           <p>{product.title}</p>
           <p>
-            <small>SKU:{product.id}</small>
+            <small>SKU:{product.id}</small>{" "}
+            <div className="product__rating">
+              {Array(product.rating)
+                .fill()
+                .map((_) => (
+                  <p>
+                    <span role="img" aria-label="Star rating">
+                      ⭐
+                    </span>
+                  </p>
+                ))}
+            </div>
           </p>
-          <div className="product__rating">
-            {Array(product.rating)
-              .fill()
-              .map((_) => (
-                <p>
-                  <span role="img" aria-label="Star rating">
-                    ⭐
-                  </span>
-                </p>
-              ))}
-          </div>
         </div>
         <img src={product.image} alt="" />
         <p className="product__price">
@@ -45,12 +39,11 @@ class Products extends Component {
       </div>
     ));
   };
-
   handleDelete = () => {
-    console.log(this);
     this.props.deleteProduct(this);
   };
   render() {
+    console.log(this);
     return <div className="product__row">{this.productList()}</div>;
   }
 }
