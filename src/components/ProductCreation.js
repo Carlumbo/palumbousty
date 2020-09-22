@@ -61,7 +61,7 @@ class ProductCreation extends Component {
             placeholder="Price"
             value={this.state.price}
             step="0.01"
-            max="5"
+            max="99999"
             min="0"
             onChange={this.handleChange}
             required
@@ -73,7 +73,7 @@ class ProductCreation extends Component {
             placeholder="Rating"
             value={this.state.rating}
             max="5"
-            min="0"
+            min="1"
             onChange={this.handleChange}
             required
           />

@@ -5,6 +5,7 @@ import logo from "../Palumboutsy.png";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useLocation } from "react-router-dom";
 
 export default class UserHeader extends Component {
   constructor(props) {
@@ -34,14 +35,6 @@ export default class UserHeader extends Component {
         {/* 3 links  */}
         <div className="header__nav">
           {/* 1st link*/}
-
-          <Link to="/buy" className="header__link">
-            <div className="header__option">
-              <span className="header__optionLineOne">Login or</span>
-              <span className="header__optionLineTwo">Sign up</span>
-            </div>
-          </Link>
-
           <Link
             to="/"
             onClick={this.handleLogoutClick}
